@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Gestión</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+        </ul>
+    </nav>
+
+    <h1>Gestión de Items</h1>
+
+    <form id="itemForm">
+        <input type="text" id="name" placeholder="Nombre del item" required>
+        <input type="text" id="description" placeholder="Descripción">
+        <button type="submit" id="submitBtn">Agregar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="itemsTable"></tbody>
+    </table>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
