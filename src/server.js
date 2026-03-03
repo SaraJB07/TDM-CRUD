@@ -1,12 +1,22 @@
 const http = require("http");
-const fs = require("fs");
+const fs = require("fs/promises");
 const path = require("path");
 const handleItemsRoutes = require("./routes/items");
 
 const PORT = 3000;
 const PUBLIC_PATH = path.join(__dirname, "..", "public");
 
-const server = http.createServer((req, res) => {
+const MIME_TYPES = {
+    ".html": "text/html",
+    ".css": "text/css",
+    ".js": "text/javascript",
+    ".json": "application/json",
+    ".png": "image/png",
+    ".jpeg": "image/jpeg",
+    ".gif": "image/gif"
+};
+
+const server = http.createServer(async (req, res) => {
     // Imprimir peticiones
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
 
@@ -14,36 +24,26 @@ const server = http.createServer((req, res) => {
     if (handleItemsRoutes(req, res)) return;
 
     // Archivos estáticos
-    let filePath = req.url === "/" ? "index.html" : req.url;
-    const extname = path.extname(filePath);
-    const mimeTypes = {
-        ".html": "text/html",
-        ".css": "text/css",
-        ".js": "text/javascript",
-        ".json": "application/json",
-        ".png": "image/png",
-        ".jpg": "image/jpg",
-        ".gif": "image/gif"
-    };
+    try {
+        // Saca la ruta y la extensión de la URL según lo que venga en la petición
+        const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
+        let pathname = parsedUrl.pathname === "/" ? "/index.html" : parsedUrl.pathname;
+        const ext = path.extname(pathname);
+        const fullPath = path.join(PUBLIC_PATH, pathname);
+        
+        // Tipo de contenido según extensión y contenido desde la ruta obtenida
+        const contentType = MIME_TYPES[ext] || "text/plain";
+        const content = await fs.readFile(fullPath);
 
-    const fullPath = path.join(PUBLIC_PATH, filePath);
+        res.writeHead(200, { "Content-Type": contentType });
+        res.end(content);
+    } catch (err) {
+        // Captura el error y lo muestra
+        const statusCode = err.code === "ENOENT" ? 404 : err.statusCode || 500;
 
-    let contentType = mimeTypes[extname] || "text/plain";
-
-    fs.readFile(fullPath, (err, content) => {
-        if (err) {
-            if (err.code === "ENOENT") {
-                res.writeHead(404);
-                res.end("404 Not Found");
-            } else {
-                res.writeHead(500);
-                res.end(`Error del servidor: ${err.code}`);
-            }
-        } else {
-            res.writeHead(200, { "Content-Type": contentType });
-            res.end(content);
-        }
-    });
+        res.writeHead(statusCode, { "Content-Type": "text/plain" });
+        res.end(`${statusCode} - ${err.message}`);
+    }
 });
 
 server.listen(PORT, () => {
