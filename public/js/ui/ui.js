@@ -6,6 +6,10 @@ export function renderItems(items, tableBody) {
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.description || ""}</td>
+             <td>${item.price || ""}</td>
+            <td>${item.stock || ""}</td> 
+            
+
             <td>
                 <button class="btn-edit" data-id="${item.id}">Editar</button>
                 <button class="btn-delete" data-id="${item.id}">Eliminar</button>
@@ -23,5 +27,8 @@ export function resetForm(form, submitBtn) {
 export function fillForm(form, item, submitBtn) {
     form.querySelector("#name").value = item.name;
     form.querySelector("#description").value = item.description || "";
+    form.querySelector("#price").value = item.price || "";
+    form.querySelector("#stock").value = item.stock || "";
+    
     if (submitBtn) submitBtn.textContent = "Guardar cambios";
 }
