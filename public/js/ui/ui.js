@@ -10,6 +10,7 @@ export function renderItems(items, tableBody) {
             <td>${item.stock || ""}</td> 
             <td>${item.category || ""}</td> 
             <td>${item.material || ""}</td> 
+            <td>${item.image || ""}</td>
 
             
 
@@ -34,6 +35,7 @@ export function fillForm(form, item, submitBtn) {
     form.querySelector("#stock").value = item.stock || "";
     form.querySelector("#category").value = item.category || "";
     form.querySelector("#material").value = item.material || "";
+    form.querySelector("#image").value = item.image || "";
     
     if (submitBtn) submitBtn.textContent = "Guardar cambios";
 }

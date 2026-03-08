@@ -2,10 +2,38 @@
   {
     "name": "Premiummmmm",
     "description": "PulseraFFFFF",
-    "price": 123,
+    "price": 222,
     "stock": 234,
-    "category": "EWRE",
+    "category": "njmh",
     "material": "RTHaaaaagsss",
     "id": 1772930495086
+  },
+  {
+    "name": "Sara Barrera",
+    "description": "dgbddb",
+    "price": 2105,
+    "stock": 57275,
+    "category": "hnhn",
+    "material": "tdmjthud",
+    "id": 1772934163419
+  },
+  {
+    "name": "Thomas",
+    "description": "dfkjbvkdjbv",
+    "price": 1521122,
+    "stock": 12,
+    "category": "Aretes",
+    "material": "Oro",
+    "id": 1772941230785
+  },
+  {
+    "name": "Aretes 1",
+    "description": "blas blas",
+    "price": 25000,
+    "stock": 3,
+    "category": "Aretes",
+    "material": "Oro",
+    "image": "https://i.pinimg.com/1200x/08/e5/e4/08e5e4d4d343162e1aa553d08b4ce83b.jpg",
+    "id": 1772943307547
   }
 ]

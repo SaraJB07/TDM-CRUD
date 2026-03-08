@@ -1,3 +1,42 @@
+/* === CATÁLOGO CARDS === */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.item-card {
+    background: #e4dac6;
+    color: #7a1734;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(122, 23, 52, 0.15);
+    padding: 24px 18px;
+    transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+    border: 2px solid #da849b;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item-card h2 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    color: #7a1734;
+}
+
+.item-card p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.item-card:hover {
+    box-shadow: 0 8px 32px rgba(218, 132, 155, 0.25);
+    background: #f3e7ea;
+    transform: translateY(-4px) scale(1.03);
+    border-color: #7a1734;
+}
 /* index.html */
 body {
     font-family: Arial, sans-serif;
@@ -372,6 +411,7 @@ button.btn-delete:hover {
 .swal2-icon.swal2-question{
     border-color: #da849b !important;
     color: #da849b !important;
+}
 
 .btn-cancelar:hover{
     background-color: #7a1734 !important;

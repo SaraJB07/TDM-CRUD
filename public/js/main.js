@@ -112,6 +112,7 @@ form.addEventListener("submit", async (e) => {
     const stock = parseInt(form.querySelector("#stock").value);
     const category = form.querySelector("#category").value.trim();
     const material = form.querySelector("#material").value.trim();
+    const image = form.querySelector("#image").value.trim();
 
     const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
 
@@ -146,7 +147,8 @@ form.addEventListener("submit", async (e) => {
             price !== originalItem.price ||
             stock !== originalItem.stock ||
             category !== originalItem.category ||
-            material !== originalItem.material;
+            material !== originalItem.material ||
+            image !== originalItem.image;
 
         if (!huboCambios) {
             showMessage("No se realizaron cambios.", "warning");
@@ -173,7 +175,7 @@ form.addEventListener("submit", async (e) => {
 
         if (!result.isConfirmed) return;
 
-        await updateItem(editingId, { name, description, price, stock, category, material });
+        await updateItem(editingId, { name, description, price, stock, category, material, image });
 
         editingId = null;
         originalItem = null;
@@ -183,7 +185,7 @@ form.addEventListener("submit", async (e) => {
     } else {
 
         // CREAR NUEVO ITEM
-        await createItem({ name, description, price, stock, category, material });
+        await createItem({ name, description, price, stock, category, material, image });
 
         showMessage("Item agregado correctamente", "success");
     }
