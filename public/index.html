@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Gestión</a></li>
@@ -16,28 +17,79 @@
 
     <h1>Gestión de Items</h1>
 
-    <form id="itemForm">
-        <input type="text" id="name" placeholder="Nombre del item" required>
-        <input type="text" id="description" placeholder="Descripción">
-        <input type="number" id="price" placeholder="Precio" step="0.01">
-        <input type="number" id="stock" placeholder="Stock">        
+    <form id="itemForm" novalidate>
+
+        <input 
+            type="text" 
+            id="name" 
+            placeholder="Nombre del item" 
+            required
+        >
+
+        <input 
+            type="text" 
+            id="description" 
+            placeholder="Descripción"
+            required
+        >
+
+        <input 
+            type="number" 
+            id="price" 
+            placeholder="Precio" 
+            step="0.01"
+            required
+        >
+
+        <input 
+            type="number" 
+            id="stock" 
+            placeholder="Stock" 
+            step="1"
+            required
+        >
+
+        <input 
+            type="text" 
+            id="material" 
+            placeholder="Material"
+            required
+            oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g,'')"
+        >
+
+        <input 
+            type="text" 
+            id="category" 
+            placeholder="Categoría"
+            required
+            oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g,'')"
+        >
+
         <button type="submit" id="submitBtn">Agregar</button>
+
     </form>
+
+    <div id="mensajito"></div>
 
     <table>
         <thead>
             <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Acciones</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoría</th>
+                <th>Material</th>
+                <th>Acciones</th>
             </tr>
         </thead>
+
         <tbody id="itemsTable"></tbody>
     </table>
 
     <script type="module" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>

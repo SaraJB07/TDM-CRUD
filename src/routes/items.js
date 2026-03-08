@@ -38,12 +38,25 @@ function handleItemsRoutes(req, res) {
         let body = "";
         req.on("data", chunk => body += chunk);
         req.on("end", () => {
-            const items = readData();
-            const nuevo = JSON.parse(body);
-            nuevo.id = Date.now();
-            items.push(nuevo);
-            writeData(items);
-            res.end(JSON.stringify(nuevo));
+            try {
+                const nuevo = JSON.parse(body);
+
+                // Validaciones
+                if (!nuevo.name) return res.end(JSON.stringify({ error: "El nombre es obligatorio" }));
+                if (!nuevo.description) return res.end(JSON.stringify({ error: "La descripción es obligatoria" }));
+                if (!nuevo.category) return res.end(JSON.stringify({ error: "La categoría es obligatoria" }));
+                if (!nuevo.material) return res.end(JSON.stringify({ error: "El material es obligatorio" }));
+                if (isNaN(nuevo.price) || nuevo.price <= 0) return res.end(JSON.stringify({ error: "El precio debe ser mayor a 0" }));
+                if (!Number.isInteger(nuevo.stock) || nuevo.stock < 0) return res.end(JSON.stringify({ error: "El stock debe ser un número entero positivo" }));
+
+                const items = readData();
+                nuevo.id = Date.now();
+                items.push(nuevo);
+                writeData(items);
+                res.end(JSON.stringify(nuevo));
+            } catch (err) {
+                res.end(JSON.stringify({ error: "JSON inválido" }));
+            }
         });
         return true;
     }
@@ -56,16 +69,30 @@ function handleItemsRoutes(req, res) {
             let body = "";
             req.on("data", chunk => body += chunk);
             req.on("end", () => {
-                let items = readData();
-                const idx = items.findIndex(i => i.id === id);
+                try {
+                    const updatedData = JSON.parse(body);
 
-                if (idx >= 0) {
-                    const updated = { ...items[idx], ...JSON.parse(body), id };
-                    items[idx] = updated;
-                    writeData(items);
-                    res.end(JSON.stringify(updated));
-                } else {
-                    res.end(JSON.stringify({ error: "No encontrado" }));
+                    // Validaciones
+                    if (!updatedData.name) return res.end(JSON.stringify({ error: "El nombre es obligatorio" }));
+                    if (!updatedData.description) return res.end(JSON.stringify({ error: "La descripción es obligatoria" }));
+                    if (!updatedData.category) return res.end(JSON.stringify({ error: "La categoría es obligatoria" }));
+                    if (!updatedData.material) return res.end(JSON.stringify({ error: "El material es obligatorio" }));
+                    if (isNaN(updatedData.price) || updatedData.price <= 0) return res.end(JSON.stringify({ error: "El precio debe ser mayor a 0" }));
+                    if (!Number.isInteger(updatedData.stock) || updatedData.stock < 0) return res.end(JSON.stringify({ error: "El stock debe ser un número entero positivo" }));
+
+                    let items = readData();
+                    const idx = items.findIndex(i => i.id === id);
+
+                    if (idx >= 0) {
+                        const updated = { ...items[idx], ...updatedData, id };
+                        items[idx] = updated;
+                        writeData(items);
+                        res.end(JSON.stringify(updated));
+                    } else {
+                        res.end(JSON.stringify({ error: "No encontrado" }));
+                    }
+                } catch (err) {
+                    res.end(JSON.stringify({ error: "JSON inválido" }));
                 }
             });
             return true;

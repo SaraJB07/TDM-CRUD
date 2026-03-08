@@ -8,6 +8,9 @@ export function renderItems(items, tableBody) {
             <td>${item.description || ""}</td>
              <td>${item.price || ""}</td>
             <td>${item.stock || ""}</td> 
+            <td>${item.category || ""}</td> 
+            <td>${item.material || ""}</td> 
+
             
 
             <td>
@@ -29,6 +32,8 @@ export function fillForm(form, item, submitBtn) {
     form.querySelector("#description").value = item.description || "";
     form.querySelector("#price").value = item.price || "";
     form.querySelector("#stock").value = item.stock || "";
+    form.querySelector("#category").value = item.category || "";
+    form.querySelector("#material").value = item.material || "";
     
     if (submitBtn) submitBtn.textContent = "Guardar cambios";
 }

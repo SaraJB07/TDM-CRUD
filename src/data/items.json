@@ -1,19 +1,11 @@
 [
   {
-    "name": "Objeto 1",
-    "description": "Descripción 1",
-    "id": 1
-  },
-  {
-    "name": "Objeto 2",
-    "description": "Descripción 2",
-    "id": 2
-  },
-  {
-    "name": "objeto 3",
-    "description": "dgbddb",
-    "price": 250000,
-    "stock": 555,
-    "id": 1772632940972
+    "name": "Premiummmmm",
+    "description": "PulseraFFFFF",
+    "price": 123,
+    "stock": 234,
+    "category": "EWRE",
+    "material": "RTHaaaaagsss",
+    "id": 1772930495086
   }
 ]
