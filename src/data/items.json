@@ -1,39 +1,22 @@
 [
   {
-    "name": "Premiummmmm",
-    "description": "PulseraFFFFF",
-    "price": 222,
-    "stock": 234,
-    "category": "njmh",
-    "material": "RTHaaaaagsss",
-    "id": 1772930495086
-  },
-  {
-    "name": "Sara Barrera",
-    "description": "dgbddb",
-    "price": 2105,
-    "stock": 57275,
-    "category": "hnhn",
-    "material": "tdmjthud",
-    "id": 1772934163419
-  },
-  {
-    "name": "Thomas",
-    "description": "dfkjbvkdjbv",
-    "price": 1521122,
-    "stock": 12,
-    "category": "Aretes",
-    "material": "Oro",
-    "id": 1772941230785
-  },
-  {
-    "name": "Aretes 1",
-    "description": "blas blas",
+    "name": "Aretes Luna Brillante",
+    "description": "Aretes pequeños con forma de luna creciente, elaborados en plata con un acabado pulido que refleja la luz. Su diseño delicado y ligero los hace cómodos para usar durante todo el día, combinando fácilmente con estilos casuales o elegantes.",
     "price": 25000,
-    "stock": 3,
+    "stock": 10,
     "category": "Aretes",
-    "material": "Oro",
-    "image": "https://i.pinimg.com/1200x/08/e5/e4/08e5e4d4d343162e1aa553d08b4ce83b.jpg",
-    "id": 1772943307547
+    "material": "Plata",
+    "image": "https://i.pinimg.com/736x/da/e3/8c/dae38cc03d4c6f951a0d8cbaf5bc1aeb.jpg",
+    "id": 1772945628755
+  },
+  {
+    "name": "Aretes Perla Clásica",
+    "description": "Aretes con una perla blanca redonda en el centro, montada sobre una base de acero inoxidable resistente. Su diseño elegante y atemporal los convierte en una joya perfecta para eventos formales, reuniones especiales o uso diario con un toque sofisticado.",
+    "price": 35000,
+    "stock": 24,
+    "category": "Aretes",
+    "material": "Acero inoxidable y perla",
+    "image": "https://i.pinimg.com/1200x/ac/63/c0/ac63c02989c6132cc8ca8071a5587e6c.jpg",
+    "id": 1772947602643
   }
 ]

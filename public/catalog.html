@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
+    <title>Catalogo</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="index.html">Gestion</a></li>
+            <li><a href="catalog.html">Catalogo</a></li>
         </ul>
     </nav>
 
-    <h1>Catálogo de Items</h1>
+    <h1>Catalogo de Items</h1>
 
-    <div id="catalogContainer" class="catalog-grid">
-        <!-- Aquí se van a renderizar las tarjetas con los items -->
+    <div id="catalogLayout" class="catalog-layout">
+        <div id="catalogContainer" class="catalog-grid"></div>
+
+        <aside id="itemDrawer" class="item-drawer" aria-hidden="true">
+            <button id="closeDrawerBtn" class="drawer-close" aria-label="Cerrar detalle">x</button>
+            <div class="item-drawer-content">
+                <img id="drawerImage" class="item-drawer-image" src="" alt="Producto">
+                <h2 id="drawerName"></h2>
+                <p><strong>Descripcion:</strong> <span id="drawerDescription"></span></p>
+                <p><strong>Categoria:</strong> <span id="drawerCategory"></span></p>
+                <p><strong>Material:</strong> <span id="drawerMaterial"></span></p>
+                <p><strong>Precio:</strong> $<span id="drawerPrice"></span></p>
+            </div>
+        </aside>
     </div>
 
     <script type="module" src="./js/catalog.js"></script>

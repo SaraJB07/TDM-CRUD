@@ -6,15 +6,16 @@ export function renderItems(items, tableBody) {
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.description || ""}</td>
-             <td>${item.price || ""}</td>
-            <td>${item.stock || ""}</td> 
-            <td>${item.category || ""}</td> 
-            <td>${item.material || ""}</td> 
-            <td>${item.image || ""}</td>
-
-            
-
+            <td>${item.price || ""}</td>
+            <td>${item.stock || ""}</td>
+            <td>${item.category || ""}</td>
+            <td>${item.material || ""}</td>
             <td>
+                ${item.image
+                    ? `<img src="${item.image}" alt="${item.name}" class="table-image">`
+                    : "Sin imagen"}
+            </td>
+            <td class="actions">
                 <button class="btn-edit" data-id="${item.id}">Editar</button>
                 <button class="btn-delete" data-id="${item.id}">Eliminar</button>
             </td>
@@ -36,6 +37,6 @@ export function fillForm(form, item, submitBtn) {
     form.querySelector("#category").value = item.category || "";
     form.querySelector("#material").value = item.material || "";
     form.querySelector("#image").value = item.image || "";
-    
+
     if (submitBtn) submitBtn.textContent = "Guardar cambios";
 }

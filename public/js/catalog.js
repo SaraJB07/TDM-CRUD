@@ -1,45 +1,79 @@
-// Script base para la vista de catálogo
-// Aquí deben consumir la API de items y mostrarlos en la página
-
-// Constante con la URL base de la API
 const API_URL = "/api/items";
 
+const catalogLayout = document.getElementById("catalogLayout");
 const catalogContainer = document.getElementById("catalogContainer");
+const itemDrawer = document.getElementById("itemDrawer");
+const closeDrawerBtn = document.getElementById("closeDrawerBtn");
 
-// Función principal para cargar los items desde la API
+const drawerImage = document.getElementById("drawerImage");
+const drawerName = document.getElementById("drawerName");
+const drawerDescription = document.getElementById("drawerDescription");
+const drawerCategory = document.getElementById("drawerCategory");
+const drawerMaterial = document.getElementById("drawerMaterial");
+const drawerPrice = document.getElementById("drawerPrice");
+
 async function loadCatalog() {
     try {
-        // 1. Hacer fetch a la API (GET /api/items)
         const res = await fetch(API_URL);
         if (!res.ok) throw new Error("Error al cargar items");
+
         const items = await res.json();
-
-        // 2. Limpiar el contenedor del catálogo
         catalogContainer.innerHTML = "";
-
-        // 3. Iterar sobre cada item y llamar a renderItem()
         items.forEach(renderItem);
     } catch (err) {
-        console.error("Error cargando catálogo:", err);
-        catalogContainer.innerHTML = `<div class='error'>No se pudo cargar el catálogo.</div>`;
+        console.error("Error cargando catalogo:", err);
+        catalogContainer.innerHTML = "<div class='error'>No se pudo cargar el catalogo.</div>";
     }
 }
 
-// Función para renderizar un item en el catálogo
 function renderItem(item) {
-    // Crear un elemento div para la card
-    const card = document.createElement("div");
+    const card = document.createElement("article");
     card.className = "item-card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+
     card.innerHTML = `
-        <h2>${item.name}</h2>
-        <p><strong>Descripción:</strong> ${item.description}</p>
-        <p><strong>Categoría:</strong> ${item.category}</p>
-        <p><strong>Material:</strong> ${item.material}</p>
-        <p><strong>Precio:</strong> $${item.price}</p>
-        <p><strong>Stock:</strong> ${item.stock}</p>
+        <img src="${item.image || ""}" alt="${item.name}" class="item-image">
+        <h2>${item.name || "Sin nombre"}</h2>
+        <p class="item-card-price"><strong>Precio:</strong> $${item.price || "0"}</p>
     `;
+
+    card.addEventListener("click", () => openDrawer(item));
+    card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openDrawer(item);
+        }
+    });
+
     catalogContainer.appendChild(card);
 }
 
-// Inicializar el catálogo cuando cargue la página
+function openDrawer(item) {
+    drawerImage.src = item.image || "";
+    drawerImage.alt = item.name || "Item";
+
+    drawerName.textContent = item.name || "Sin nombre";
+    drawerDescription.textContent = item.description || "Sin descripcion";
+    drawerCategory.textContent = item.category || "Sin categoria";
+    drawerMaterial.textContent = item.material || "Sin material";
+    drawerPrice.textContent = item.price ?? "0";
+
+    catalogLayout.classList.add("modal-open");
+    itemDrawer.classList.add("open");
+    itemDrawer.setAttribute("aria-hidden", "false");
+}
+
+function closeDrawer() {
+    catalogLayout.classList.remove("modal-open");
+    itemDrawer.classList.remove("open");
+    itemDrawer.setAttribute("aria-hidden", "true");
+}
+
+closeDrawerBtn.addEventListener("click", closeDrawer);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDrawer();
+});
+
 loadCatalog();

@@ -3,94 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión</title>
+    <title>Gestion</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="index-page">
 
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="index.html">Gestion</a></li>
+            <li><a href="catalog.html">Catalogo</a></li>
         </ul>
     </nav>
 
-    <h1>Gestión de Items</h1>
+    <main class="page-shell">
+        <h1>Gestion de Items</h1>
 
-    <form id="itemForm" novalidate>
-
-        <input 
-            type="text" 
-            id="name" 
-            placeholder="Nombre del item" 
-            required
-        >
-
-        <input 
-            type="text" 
-            id="description" 
-            placeholder="Descripción"
-            required
-        >
-        <input 
-             type="text" 
-             id="price" 
-             placeholder="Precio" 
-             required
-             oninput="this.value=this.value.replace(/[^0-9.]/g,'')"
->
-
-        <input 
-            type="text" 
-            id="stock" 
-            placeholder="Stock" 
-            required
-            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-        >
-
-        <input 
-            type="text" 
-            id="material" 
-            placeholder="Material"
-            required
-            oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g,'')"
-            
-        >
-        <input 
-            type="text" 
-            id="image" 
-            placeholder="Link de imagen"
-            required
-        >
-        <input 
-            type="text" 
-            id="category" 
-            placeholder="Categoría"
-            required
-            oninput="this.value=this.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g,'')"
+        <form id="itemForm" novalidate>
+            <div class="form-grid">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Nombre del item"
+                    required
                 >
-        <button type="submit" id="submitBtn">Agregar</button>
 
-    </form>
+                <input
+                    type="text"
+                    id="category"
+                    placeholder="Categoria"
+                    required
+                >
 
-    <div id="mensajito"></div>
+                <input
+                    type="text"
+                    id="material"
+                    placeholder="Material"
+                    required
+                >
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Categoría</th>
-                <th>Material</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+                <input
+                    type="text"
+                    id="price"
+                    placeholder="Precio"
+                    required
+                >
 
-        <tbody id="itemsTable"></tbody>
-    </table>
+                <input
+                    type="text"
+                    id="stock"
+                    placeholder="Stock"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="image"
+                    placeholder="Link de imagen"
+                    required
+                >
+
+                <textarea
+                    id="description"
+                    placeholder="Descripcion del producto"
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Agregar</button>
+        </form>
+
+        <div id="mensajito"></div>
+
+        <section class="table-shell">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Categoria</th>
+                        <th>Material</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="itemsTable"></tbody>
+            </table>
+        </section>
+    </main>
 
     <script type="module" src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
