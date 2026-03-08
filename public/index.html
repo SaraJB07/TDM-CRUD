@@ -32,21 +32,20 @@
             placeholder="Descripción"
             required
         >
+        <input 
+             type="text" 
+             id="price" 
+             placeholder="Precio" 
+             required
+             oninput="this.value=this.value.replace(/[^0-9.]/g,'')"
+>
 
         <input 
-            type="number" 
-            id="price" 
-            placeholder="Precio" 
-            step="0.01"
-            required
-        >
-
-        <input 
-            type="number" 
+            type="text" 
             id="stock" 
             placeholder="Stock" 
-            step="1"
             required
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')"
         >
 
         <input 
