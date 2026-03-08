@@ -1,131 +1,23 @@
-/* === CATÁLOGO CARDS === */
-.catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin: 30px auto;
-    max-width: 1200px;
-}
-
-.item-card {
-    background: #e4dac6;
-    color: #7a1734;
-    border-radius: 18px;
-    box-shadow: 0 4px 16px rgba(122, 23, 52, 0.15);
-    padding: 24px 18px;
-    transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
-    border: 2px solid #da849b;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.item-card h2 {
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-    color: #7a1734;
-}
-
-.item-card p {
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.item-card:hover {
-    box-shadow: 0 8px 32px rgba(218, 132, 155, 0.25);
-    background: #f3e7ea;
-    transform: translateY(-4px) scale(1.03);
-    border-color: #7a1734;
-}
-/* index.html */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #f9f9f9;
-}
-
-h1 {
-    color: #333;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 8px;
-    margin-right: 5px;
-}
-
-button {
-    padding: 8px 12px;
-    background: #09ded6;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #005fa3;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-/* Navbar */
-.navbar {
-    background: #333;
-    padding: 0.5rem;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-/* RESET BÁSICO */
+/* RESET Y GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: #f3e7ea;
     color: #7a1734;
-    line-height: 1.6;
     padding: 20px;
 }
 
 h1 {
-    color: #7a1734;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* NAVBAR HORIZONTAL */
+/* NAVBAR, Estilos de la barra de navegación superior*/
 .navbar {
     background-color: #7a1734;
     padding: 10px 20px;
@@ -136,7 +28,6 @@ h1 {
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: flex-start;
     gap: 20px;
 }
 
@@ -144,159 +35,101 @@ h1 {
     color: #f3e7ea;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
     padding: 5px 10px;
-    border-radius: 6px;
 }
 
-.navbar a:hover {
-    color: #da849b;
-    background-color: rgba(255,255,255,0.1);
-}
-
-/* FORMULARIO HORIZONTAL */
+/* FORMULARIO, Contenedor de entrada de datos*/
 form#itemForm {
     background-color: #e4dac6;
     padding: 20px;
     border-radius: 10px;
     max-width: 900px;
-    margin: 0 auto 30px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    align-items: center;
-    justify-content: flex-start;
+    transition: all 0.3s ease; /* Para que el cambio a modo edición sea suave */
 }
 
-form#itemForm input {
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+form#itemForm input,
+textarea {
     flex: 1 1 calc(30% - 10px);
-    min-width: 150px;
     padding: 10px;
     border: 1px solid #c7d784;
     border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.2s ease;
+    outline: none; 
 }
 
-form#itemForm button {
+textarea {
+    flex: 1 1 100%;
+    height: 80px;
+}
+
+#submitBtn {
     background-color: #7a1734;
-    color: #f3e7ea;
-    padding: 12px 25px;
+    color: white;
+    width: 100%;
+    padding: 12px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    flex: 1 1 100%;
     font-size: 1rem;
-    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-form#itemForm button:hover {
-    background-color: #da849b;
-    transform: translateY(-2px);
-}
-
-/* INPUTS CON ERROR */
-input.input-error {
-    border: 2px solid #da849b !important;
-    background-color: #ffe6eb !important;
-    animation: shake 0.2s;
-}
-
-/* ANIMACIÓN DE SACUDIDA */
-@keyframes shake {
-    0% { transform: translateX(0px); }
-    25% { transform: translateX(-3px); }
-    50% { transform: translateX(3px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(0px); }
-}
-
-/* MENSAJITOS AUTOMÁTICOS */
-#mensajito {
-    max-width: 700px;
-    margin: 10px auto;
-    text-align: center;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: none;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    position: relative;
-    opacity: 0;
-}
-
-#mensajito.show {
-    display: block;
-    opacity: 1;
-}
-
-#mensajito.success {
-    background-color: #c7d784;
-    color: #7a1734;
-    border-left: 6px solid #7a1734;
-}
-
-#mensajito.error {
-    background-color: #da849b;
-    color: #f3e7ea;
-    border-left: 6px solid #7a1734;
-}
-
-#mensajito.warning {
-    background-color: #f7d06e;
-    color: #7a1734;
-    border-left: 6px solid #da849b;
-}
-
-/* TABLA */
+/* TABLA, Interfaz de los ítems*/
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0 auto;
-    max-width: 900px;
-    background-color: #e4dac6;
+    background: #e4dac6;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 thead {
-    background-color: #7a1734;
-    color: #f3e7ea;
+    background: #7a1734;
+    color: white;
 }
 
-th, td {
-    padding: 12px 15px;
+th,
+td {
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f3e7ea;
-}
-
-tbody tr:hover {
-    background-color: #da849b;
-    color: #f3e7ea;
-    transition: background-color 0.3s;
-}
-
-/* CELDA DE ACCIONES CON BOTONES LADO A LADO */
-td.actions {
-    display: flex;
-    gap: 5px;
-}
-
-/* BOTONES ACCIONES */
-button.btn-edit, button.btn-delete {
-    padding: 6px 12px;
-    border: none;
+.table-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 5px;
+}
+
+/* BOTONES TABLA, editar y borrar */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button.btn-edit, button.btn-delete {
+    padding: 6px 15px;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 button.btn-edit {
@@ -304,144 +137,176 @@ button.btn-edit {
     color: #7a1734;
 }
 
-button.btn-edit:hover {
-    background-color: #7a1734;
-    color: #f3e7ea;
-}
-
 button.btn-delete {
     background-color: #da849b;
     color: #f3e7ea;
 }
 
-button.btn-delete:hover {
-    background-color: #7a1734;
-    color: #f3e7ea;
+/* EFECTO HOVER: Salto y cambio a rosado fuerte */
+button.btn-edit:hover, button.btn-delete:hover {
+    background-color: #d11d53 !important;
+    color: white !important;
+    transform: translateY(-5px) scale(1.05);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    form#itemForm input {
-        flex: 1 1 100%;
-    }
-    .navbar ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    #mensajito {
-        font-size: 0.9rem;
-        padding: 10px 15px;
-    }
+/* !!!!=== MODAL PERSONALIZADO !!!!!=== */
+.mi-popup-modal {
+    border: 3px solid #7a1734; /* Borde más marcado como la captura */
+    border-radius: 15px;
+    background: #e4dac6;
+    padding: 0;
+    width: 420px;
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
-
-
-/* ===== SWEET ALERT PERSONALIZADO ===== */
-
-.mi-popup{
-    background-color: #e4dac6 !important;
-    border: 2px solid #7a1734 !important;
-    border-radius: 12px !important;
-    padding: 25px !important;
+.mi-popup-modal::backdrop {
+    background: rgba(0, 0, 0, 0.7);
 }
 
-/* titulo */
-.titulo-alerta{
-    color: #7a1734 !important;
-    font-weight: bold !important;
+.modal-body {
+    padding: 30px;
+    text-align: center;
 }
 
-/* texto */
-.texto-alerta{
-    color: #7a1734 !important;
+.modal-icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #da849b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 45px;
+    color: #da849b;
+    background-color: rgba(218, 132, 155, 0.1);
 }
 
-/* icono advertencia */
-.swal2-icon.swal2-warning{
-    border-color: #da849b !important;
-    color: #da849b !important;
+.titulo-alerta {
+    color: #7a1734;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-/* botón eliminar */
-.btn-eliminar{
-    background-color: #da849b !important;
-    color: #f3e7ea !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 10px 18px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-.btn-eliminar:hover{
-    background-color: #7a1734 !important;
+.btn-confirmar {
+    background: #da849b;
+    color: white;
+    border: 2px solid #7a1734; /* Borde sutil para resaltar el botón */
+    padding: 12px 25px;
+    border-radius: 10px; /* Más redondeado como la captura */
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
 }
 
-/* botón cancelar */
-.btn-cancelar{
-    background-color: #c7d784 !important;
-    color: #7a1734 !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 10px 18px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
+.btn-cancelar-modal {
+    background: #c7d784;
+    color: #7a1734;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
 }
 
-
-
-
-
-.btn-editar{
-    background-color: #da849b !important;
-    color: #f3e7ea !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 10px 18px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
+.btn-confirmar:hover, .btn-cancelar-modal:hover {
+    transform: scale(1.05);
 }
 
-.btn-editar:hover{
-    background-color: #7a1734 !important;
+/* MENSAJITOS, Alertas */
+#mensajito {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-/* icono advertencia */
-.swal2-icon.swal2-question{
-    border-color: #da849b !important;
-    color: #da849b !important;
-}
-
-.btn-cancelar:hover{
-    background-color: #7a1734 !important;
-    color: #f3e7ea !important;
-}
-.item-image {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #da849b;
-}
-
-.table-image {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #c7d784;
+#mensajito.show {
     display: block;
 }
+
+.success {
+    background: #c7d784;
+    color: #7a1734;
+}
+
+.error {
+    background: #da849b;
+    color: white;
+}
+
+/* --- ANIMACIONES Y ESTADOS --- */
+
+/* Al editar: Resalta el formulario */
+.form-edit, .form-editando {
+    transform: scale(1.01);
+    border: 2px solid #da849b !important;
+    box-shadow: 0 10px 30px rgba(122, 23, 52, 0.2) !important;
+}
+
+/* Botón cambia a ROSADO al editar (Antes era azul) */
+.form-edit #submitBtn, .form-editando #submitBtn {
+    background-color: #da849b !important; /* Color rosado fuerte de tu paleta */
+    color: white !important;
+}
+
+/* Animación de pulso al entrar a editar */
+@keyframes pulsoEditar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1.01); }
+}
+
+.animar-pulso {
+    animation: pulsoEditar 0.5s ease-out;
+}
+
+/* Animación de temblor (ERROR) */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* Activa el error visual en el form vacío */
+.form-error-vibrar {
+    border: 2px solid #da849b !important;
+    animation: shake 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(218, 132, 155, 0.4) !important;
+}
+
+/* Bordes rojos en inputs vacíos */
+.input-error {
+    border: 2px solid #da849b !important;
+    background-color: #fff1f1 !important;
+}
+
+
+
+/* =========================================================================================== */
+
+
 
 /* Catalog drawer modal */
 .catalog-layout {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
+    gap: 24px; align-items: flex-start;
 }
 
 .catalog-layout .catalog-grid {

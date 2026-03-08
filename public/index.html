@@ -1,74 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion</title>
+    <title>Gestión de Items</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body class="index-page">
 
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Gestion</a></li>
-            <li><a href="catalog.html">Catalogo</a></li>
+            <li><a href="index.html">Gestión</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
         </ul>
     </nav>
 
     <main class="page-shell">
-        <h1>Gestion de Items</h1>
+        <h1>Gestión de Items</h1>
 
         <form id="itemForm" novalidate>
             <div class="form-grid">
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Nombre del item"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="category"
-                    placeholder="Categoria"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="material"
-                    placeholder="Material"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="price"
-                    placeholder="Precio"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="stock"
-                    placeholder="Stock"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="image"
-                    placeholder="Link de imagen"
-                    required
-                >
-
-                <textarea
-                    id="description"
-                    placeholder="Descripcion del producto"
-                    required
-                ></textarea>
+                <input type="text" id="name" placeholder="Nombre del item" required>
+                <input type="text" id="category" placeholder="Categoría" required>
+                <input type="text" id="material" placeholder="Material" required>
+                <input type="text" id="price" placeholder="Precio" required>
+                <input type="text" id="stock" placeholder="Stock" required>
+                <input type="text" id="image" placeholder="Link de imagen" required>
+                <textarea id="description" placeholder="Descripción del producto" required></textarea>
             </div>
-
             <button type="submit" id="submitBtn">Agregar</button>
         </form>
 
@@ -80,23 +39,36 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th>Precio</th>
                         <th>Stock</th>
-                        <th>Categoria</th>
+                        <th>Categoría</th>
                         <th>Material</th>
                         <th>Imagen</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-
                 <tbody id="itemsTable"></tbody>
             </table>
         </section>
     </main>
 
-    <script type="module" src="./js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- modal de confirmación personalizado para mensaje, titulo e icono -->
 
+    <dialog id="customConfirm" class="mi-popup-modal">
+        <div class="modal-body">
+            <div id="modalIcon" class="modal-icon">?</div>
+            <h2 id="modalTitle" class="titulo-alerta"></h2>
+            <p id="modalMessage" class="texto-alerta"></p>
+            <div class="modal-buttons">
+                <!-- Botón para confirmar la acción  -->
+                <button id="confirmBtn" class="btn-confirmar">Confirmar</button>
+                <!-- Botón para cancelar la acción -->
+                <button id="cancelBtn" class="btn-cancelar-modal">Cancelar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

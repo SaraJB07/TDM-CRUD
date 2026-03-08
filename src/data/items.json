@@ -1,15 +1,5 @@
 [
   {
-    "name": "Aretes Luna Brillante",
-    "description": "Aretes pequeños con forma de luna creciente, elaborados en plata con un acabado pulido que refleja la luz. Su diseño delicado y ligero los hace cómodos para usar durante todo el día, combinando fácilmente con estilos casuales o elegantes.",
-    "price": 25000,
-    "stock": 10,
-    "category": "Aretes",
-    "material": "Plata",
-    "image": "https://i.pinimg.com/736x/da/e3/8c/dae38cc03d4c6f951a0d8cbaf5bc1aeb.jpg",
-    "id": 1772945628755
-  },
-  {
     "name": "Aretes Perla Clásica",
     "description": "Aretes con una perla blanca redonda en el centro, montada sobre una base de acero inoxidable resistente. Su diseño elegante y atemporal los convierte en una joya perfecta para eventos formales, reuniones especiales o uso diario con un toque sofisticado.",
     "price": 35000,
