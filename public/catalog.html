@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,30 +6,48 @@
     <title>Catalogo</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Gestion</a></li>
-            <li><a href="catalog.html">Catalogo</a></li>
-        </ul>
+<body class="catalog-page">
+
+    <nav class="navbar" aria-label="Navegacion principal">
+        <div class="navbar-inner">
+            <a class="navbar-brand" href="index.html">MUNDO JOYAS</a>
+            <ul class="navbar-menu">
+                <li><a class="navbar-link" href="index.html">Gestión</a></li>
+                <li><a class="navbar-link is-active" href="catalog.html">Catálogo</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <h1>Catalogo de Items</h1>
+    <h1>Catálogo de Items</h1>
 
     <div id="catalogLayout" class="catalog-layout">
         <div id="catalogContainer" class="catalog-grid"></div>
 
-        <aside id="itemDrawer" class="item-drawer" aria-hidden="true">
-            <button id="closeDrawerBtn" class="drawer-close" aria-label="Cerrar detalle">x</button>
+        <section id="itemDrawer" class="item-drawer" aria-hidden="true">
+            <button id="closeDrawerBtn" class="drawer-close" aria-label="Cerrar detalle">&times;</button>
             <div class="item-drawer-content">
                 <img id="drawerImage" class="item-drawer-image" src="" alt="Producto">
+                <p class="drawer-kicker">Detalle del producto</p>
                 <h2 id="drawerName"></h2>
-                <p><strong>Descripcion:</strong> <span id="drawerDescription"></span></p>
-                <p><strong>Categoria:</strong> <span id="drawerCategory"></span></p>
-                <p><strong>Material:</strong> <span id="drawerMaterial"></span></p>
-                <p><strong>Precio:</strong> $<span id="drawerPrice"></span></p>
+
+                <div class="drawer-meta">
+                    <p class="drawer-meta-item">
+                        <span class="drawer-label">Descripcion</span>
+                        <span id="drawerDescription" class="drawer-value"></span>
+                    </p>
+                    <p class="drawer-meta-item">
+                        <span class="drawer-label">Categoria</span>
+                        <span id="drawerCategory" class="drawer-value"></span>
+                    </p>
+                    <p class="drawer-meta-item">
+                        <span class="drawer-label">Material</span>
+                        <span id="drawerMaterial" class="drawer-value"></span>
+                    </p>
+                </div>
+
+                <p class="drawer-price">Precio <strong>$<span id="drawerPrice"></span></strong></p>
             </div>
-        </aside>
+        </section>
     </div>
 
     <script type="module" src="./js/catalog.js"></script>

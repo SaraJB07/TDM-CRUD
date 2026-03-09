@@ -32,7 +32,7 @@
   {
     "name": "Aretes Estrella Brillante",
     "description": "Aretes en forma de estrella decorados con una pequeña piedra de circonia en el centro. Su diseño juvenil y brillante resalta la luz y aporta un toque llamativo y moderno a cualquier estilo.",
-    "price": 28,
+    "price": 28000,
     "stock": 2,
     "category": "Aretes",
     "material": "Plata con zirconia",
@@ -190,7 +190,7 @@
     "id": 1773021019477
   },
   {
-    "name": "nillo Perla Chic",
+    "name": "Anillo Perla Chic",
     "description": "Anillo elegante con una pequeña perla central sostenida por una base de plata pulida. La combinación de la perla y el metal crea un estilo delicado y sofisticado.",
     "price": 38000,
     "stock": 65,
@@ -198,5 +198,15 @@
     "material": "Perla y plata",
     "image": "https://i.pinimg.com/1200x/51/14/cd/5114cdd8d5d09da4e8504dab5de9e69b.jpg",
     "id": 1773021086534
+  },
+  {
+    "name": "Joyas 123",
+    "description": "Conjunto de Joyas",
+    "price": 54000,
+    "stock": 1,
+    "category": "Joyas",
+    "material": "Distintos",
+    "image": "https://i.pinimg.com/736x/a6/16/73/a616731d23fe7fe0492bb70f497f5717.jpg",
+    "id": 1773030325492
   }
 ]

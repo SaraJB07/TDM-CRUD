@@ -32,11 +32,15 @@ function renderItem(item) {
     card.setAttribute("role", "button");
     card.setAttribute("tabindex", "0");
 
+    const priceValue = Number(item.price ?? 0);
+    const formattedPrice = Number.isFinite(priceValue)
+        ? priceValue.toLocaleString("es-CO")
+        : "0";
+
     card.innerHTML = `
         <img src="${item.image || ""}" alt="${item.name}" class="item-image">
         <h2>${item.name || "Sin nombre"}</h2>
-        <p class="item-description-card">${item.description || "Sin descripción"}</p>
-        <p class="item-card-price"><strong>Precio:</strong> $${item.price || "0"}</p>
+        <p class="item-card-price">$${formattedPrice}</p>
     `;
 
     card.addEventListener("click", () => openDrawer(item));
@@ -58,7 +62,10 @@ function openDrawer(item) {
     drawerDescription.textContent = item.description || "Sin descripcion";
     drawerCategory.textContent = item.category || "Sin categoria";
     drawerMaterial.textContent = item.material || "Sin material";
-    drawerPrice.textContent = item.price ?? "0";
+    const drawerPriceValue = Number(item.price ?? 0);
+    drawerPrice.textContent = Number.isFinite(drawerPriceValue)
+        ? drawerPriceValue.toLocaleString("es-CO")
+        : "0";
 
     catalogLayout.classList.add("modal-open");
     itemDrawer.classList.add("open");
