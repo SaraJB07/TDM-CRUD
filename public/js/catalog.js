@@ -35,6 +35,7 @@ function renderItem(item) {
     card.innerHTML = `
         <img src="${item.image || ""}" alt="${item.name}" class="item-image">
         <h2>${item.name || "Sin nombre"}</h2>
+        <p class="item-description-card">${item.description || "Sin descripción"}</p>
         <p class="item-card-price"><strong>Precio:</strong> $${item.price || "0"}</p>
     `;
 

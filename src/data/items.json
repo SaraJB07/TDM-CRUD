@@ -8,5 +8,195 @@
     "material": "Acero inoxidable y perla",
     "image": "https://i.pinimg.com/1200x/ac/63/c0/ac63c02989c6132cc8ca8071a5587e6c.jpg",
     "id": 1772947602643
+  },
+  {
+    "name": "Aretes Luna Brillante",
+    "description": "Aretes pequeños con forma de luna creciente, elaborados en plata con un acabado pulido que refleja la luz. Su diseño delicado y ligero los hace cómodos para usar durante todo el día, combinando fácilmente con estilos casuales o elegantes.",
+    "price": 25000,
+    "stock": 10,
+    "category": "Aretes",
+    "material": "Plata",
+    "image": "https://i.pinimg.com/736x/da/e3/8c/dae38cc03d4c6f951a0d8cbaf5bc1aeb.jpg",
+    "id": 1773012708480
+  },
+  {
+    "name": "Aretes Corazón Dorado",
+    "description": "Aretes con diseño de corazón y acabado dorado brillante. Su tamaño mediano y su superficie lisa les dan un aspecto moderno y romántico, ideal para complementar atuendos casuales o regalar en ocasiones especiales.",
+    "price": 22000,
+    "stock": 7,
+    "category": "Aretes",
+    "material": "Acero inoxidable dorado",
+    "image": "https://i.pinimg.com/736x/5f/2f/f3/5f2ff3e71ae06dff305c491bf7a5d637.jpg",
+    "id": 1773017165977
+  },
+  {
+    "name": "Aretes Estrella Brillante",
+    "description": "Aretes en forma de estrella decorados con una pequeña piedra de circonia en el centro. Su diseño juvenil y brillante resalta la luz y aporta un toque llamativo y moderno a cualquier estilo.",
+    "price": 28,
+    "stock": 2,
+    "category": "Aretes",
+    "material": "Plata con zirconia",
+    "image": "https://i.pinimg.com/1200x/29/28/06/292806b8bee4bc64685bb1ae9f2ed5cb.jpg",
+    "id": 1773017284447
+  },
+  {
+    "name": "Aretes Minimal Circle",
+    "description": "Aretes con diseño circular minimalista elaborados en acero inoxidable. Son ligeros, resistentes y muy versátiles, ideales para quienes prefieren accesorios sencillos que combinen con cualquier tipo de ropa.",
+    "price": 20000,
+    "stock": 10,
+    "category": "Aretes",
+    "material": "Acero inoxidable",
+    "image": "https://i.pinimg.com/1200x/0c/31/5e/0c315ea34708f212868b92270d6928e7.jpg",
+    "id": 1773017380262
+  },
+  {
+    "name": "Pulsera Infinito",
+    "description": "Pulsera delicada con un símbolo de infinito en el centro, unido a una cadena fina de plata. Su diseño elegante representa eternidad y conexión, siendo una pieza perfecta para regalar o usar como accesorio significativo.",
+    "price": 30000,
+    "stock": 31,
+    "category": "Pulseras",
+    "material": "Plata",
+    "image": "https://i.pinimg.com/736x/47/94/be/4794be99f886aea90db70201b3fb67c4.jpg",
+    "id": 1773017465762
+  },
+  {
+    "name": "Pulsera Perlas Elegance",
+    "description": "Pulsera compuesta por pequeñas perlas blancas alineadas sobre una base resistente de acero inoxidable. Su estilo clásico y femenino la hace ideal para ocasiones especiales o para complementar atuendos elegantes.",
+    "price": 40000,
+    "stock": 27,
+    "category": "Pulseras",
+    "material": "Perlas y acero inoxidable",
+    "image": "https://i.pinimg.com/736x/ce/24/77/ce2477c58154a85393feb1fa079df7a9.jpg",
+    "id": 1773017553156
+  },
+  {
+    "name": "Pulsera Cadena Clásica",
+    "description": "Pulsera tipo cadena con eslabones medianos elaborada en acero inoxidable. Su diseño simple pero elegante permite combinarla con otros accesorios o usarla sola como una pieza discreta y moderna",
+    "price": 25000,
+    "stock": 54,
+    "category": "Pulseras",
+    "material": "Acero inoxidable",
+    "image": "https://i.pinimg.com/736x/90/1f/8a/901f8a67f0fffec9083690a1945cce55.jpg",
+    "id": 1773017720163
+  },
+  {
+    "name": "Pulsera Corazón Charm",
+    "description": "Pulsera de cadena fina con un pequeño dije de corazón colgante en el centro. Su diseño romántico y delicado aporta un toque femenino y elegante al conjunto.",
+    "price": 27000,
+    "stock": 23,
+    "category": "Pulseras",
+    "material": "Perlas",
+    "image": "https://i.pinimg.com/1200x/ca/df/d0/cadfd021f6021600a6e01e2d658ea5bf.jpg",
+    "id": 1773017767810
+  },
+  {
+    "name": "Pulsera Cristal Shine",
+    "description": "Pulsera decorada con pequeños cristales brillantes incrustados a lo largo de la cadena. Los cristales reflejan la luz y crean un efecto brillante que resalta la elegancia de la joya.",
+    "price": 38000,
+    "stock": 18,
+    "category": "Pulseras",
+    "material": "Acero inoxidable y cristales",
+    "image": "https://i.pinimg.com/736x/8f/72/c0/8f72c04b094c0572c0a56574748ad12e.jpg",
+    "id": 1773017846483
+  },
+  {
+    "name": "Collar Corazón Love",
+    "description": "Collar con cadena fina de plata y un dije de corazón pulido en el centro. Su diseño delicado y romántico lo convierte en una joya ideal para expresar cariño o complementar un estilo elegante.",
+    "price": 45000,
+    "stock": 37,
+    "category": "Collares",
+    "material": "Plata",
+    "image": "https://i.pinimg.com/1200x/80/79/5a/80795addac69a1e16244d9701d1636c6.jpg",
+    "id": 1773017928161
+  },
+  {
+    "name": "Collar Luna Mística",
+    "description": "Collar con dije de luna creciente acompañado de una pequeña piedra de circonia que aporta brillo. La cadena fina y el diseño moderno hacen que sea una pieza llamativa y elegante.",
+    "price": 42000,
+    "stock": 5,
+    "category": "Collares",
+    "material": "Plata con circonia",
+    "image": "https://i.pinimg.com/avif/736x/ad/72/fe/ad72fea3f5a86aba7856d5c56b66634e.avf",
+    "id": 1773018001492
+  },
+  {
+    "name": "Collar Inicial Personal",
+    "description": "Collar con un dije en forma de letra inicial, elaborado en acero inoxidable con acabado dorado. Es un accesorio moderno que permite personalizar la joya con la inicial de una persona especial",
+    "price": 40000,
+    "stock": 5,
+    "category": "Collares",
+    "material": "Acero inoxidable dorado",
+    "image": "https://i.pinimg.com/1200x/90/52/71/9052719efe95697269f7ca758572a084.jpg",
+    "id": 1773018137624
+  },
+  {
+    "name": "Collar Perla Elegante",
+    "description": "Collar con cadena fina y una perla central redonda que destaca por su brillo natural. Su diseño clásico transmite elegancia y sofisticación.",
+    "price": 48000,
+    "stock": 17,
+    "category": "Collares",
+    "material": "Perla natural y acero inoxidable",
+    "image": "https://i.pinimg.com/736x/2c/2b/6d/2c2b6d74d74b4b3ecd76dc934ece26b2.jpg",
+    "id": 1773018190711
+  },
+  {
+    "name": "Collar Estrella Brillante",
+    "description": "Collar con dije de estrella y superficie pulida que refleja la luz. Es una joya ligera y moderna que combina con diferentes estilos y ocasiones.",
+    "price": 43000,
+    "stock": 85,
+    "category": "Collares",
+    "material": "Plata",
+    "image": "https://i.pinimg.com/1200x/79/44/fd/7944fd0e256518212e122784e9116cb6.jpg",
+    "id": 1773018263369
+  },
+  {
+    "name": "Anillo Corazón Love",
+    "description": "Anillo delicado con diseño de corazón en la parte superior y un pequeño detalle brillante en el centro. Su estilo romántico y elegante lo hace ideal para regalar o usar en ocasiones especiales.",
+    "price": 35000,
+    "stock": 12,
+    "category": "Anillos",
+    "material": "Plata",
+    "image": "https://i.pinimg.com/736x/02/0b/ae/020baedf86bf8b24baf854fda505d3ef.jpg",
+    "id": 1773018328502
+  },
+  {
+    "name": "Anillo Minimal Band",
+    "description": "Anillo de banda lisa y delgada elaborado en acero inoxidable. Su diseño minimalista lo hace cómodo y perfecto para usar a diario o combinar con otros anillos.",
+    "price": 28000,
+    "stock": 19,
+    "category": "Anillos",
+    "material": "Acero inoxidable",
+    "image": "https://i.pinimg.com/avif/736x/79/57/71/795771b7d772efeb7158f3030b892343.avf",
+    "id": 1773018390452
+  },
+  {
+    "name": "Anillo Brillo Cristal",
+    "description": "Anillo con una piedra de cristal brillante incrustada en el centro y una base de plata pulida. Su diseño elegante resalta el brillo del cristal.",
+    "price": 40000,
+    "stock": 34,
+    "category": "Anillos",
+    "material": "Plata con cristal",
+    "image": "https://i.pinimg.com/736x/a6/10/5a/a6105a1dc9e4d8edab822bdc8016eca4.jpg",
+    "id": 1773020848402
+  },
+  {
+    "name": "Anillo Infinity",
+    "description": "Anillo con símbolo de infinito en la parte superior, representando eternidad y conexión. Su diseño moderno y significativo lo convierte en una pieza especial.",
+    "price": 32000,
+    "stock": 6,
+    "category": "Anillos",
+    "material": "Acero inoxidable",
+    "image": "https://i.pinimg.com/1200x/08/e5/e4/08e5e4d4d343162e1aa553d08b4ce83b.jpg",
+    "id": 1773021019477
+  },
+  {
+    "name": "nillo Perla Chic",
+    "description": "Anillo elegante con una pequeña perla central sostenida por una base de plata pulida. La combinación de la perla y el metal crea un estilo delicado y sofisticado.",
+    "price": 38000,
+    "stock": 65,
+    "category": "Anillos",
+    "material": "Perla y plata",
+    "image": "https://i.pinimg.com/1200x/51/14/cd/5114cdd8d5d09da4e8504dab5de9e69b.jpg",
+    "id": 1773021086534
   }
 ]

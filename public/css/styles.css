@@ -49,7 +49,8 @@ form#itemForm {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    transition: all 0.3s ease; /* Para que el cambio a modo edición sea suave */
+    transition: all 0.3s ease;
+    /* Para que el cambio a modo edición sea suave */
 }
 
 .form-grid {
@@ -65,7 +66,7 @@ textarea {
     padding: 10px;
     border: 1px solid #c7d784;
     border-radius: 6px;
-    outline: none; 
+    outline: none;
 }
 
 textarea {
@@ -121,7 +122,8 @@ td {
     align-items: center;
 }
 
-button.btn-edit, button.btn-delete {
+button.btn-edit,
+button.btn-delete {
     padding: 6px 15px;
     border: none;
     border-radius: 20px;
@@ -143,7 +145,8 @@ button.btn-delete {
 }
 
 /* EFECTO HOVER: Salto y cambio a rosado fuerte */
-button.btn-edit:hover, button.btn-delete:hover {
+button.btn-edit:hover,
+button.btn-delete:hover {
     background-color: #d11d53 !important;
     color: white !important;
     transform: translateY(-5px) scale(1.05);
@@ -151,13 +154,14 @@ button.btn-edit:hover, button.btn-delete:hover {
 
 /* !!!!=== MODAL PERSONALIZADO !!!!!=== */
 .mi-popup-modal {
-    border: 3px solid #7a1734; /* Borde más marcado como la captura */
+    border: 3px solid #7a1734;
+    /* Borde más marcado como la captura */
     border-radius: 15px;
     background: #e4dac6;
     padding: 0;
     width: 420px;
     margin: auto;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .mi-popup-modal::backdrop {
@@ -200,9 +204,11 @@ button.btn-edit:hover, button.btn-delete:hover {
 .btn-confirmar {
     background: #da849b;
     color: white;
-    border: 2px solid #7a1734; /* Borde sutil para resaltar el botón */
+    border: 2px solid #7a1734;
+    /* Borde sutil para resaltar el botón */
     padding: 12px 25px;
-    border-radius: 10px; /* Más redondeado como la captura */
+    border-radius: 10px;
+    /* Más redondeado como la captura */
     cursor: pointer;
     font-weight: bold;
     transition: transform 0.2s;
@@ -219,7 +225,8 @@ button.btn-edit:hover, button.btn-delete:hover {
     transition: transform 0.2s;
 }
 
-.btn-confirmar:hover, .btn-cancelar-modal:hover {
+.btn-confirmar:hover,
+.btn-cancelar-modal:hover {
     transform: scale(1.05);
 }
 
@@ -250,23 +257,34 @@ button.btn-edit:hover, button.btn-delete:hover {
 /* --- ANIMACIONES Y ESTADOS --- */
 
 /* Al editar: Resalta el formulario */
-.form-edit, .form-editando {
+.form-edit,
+.form-editando {
     transform: scale(1.01);
     border: 2px solid #da849b !important;
     box-shadow: 0 10px 30px rgba(122, 23, 52, 0.2) !important;
 }
 
 /* Botón cambia a ROSADO al editar (Antes era azul) */
-.form-edit #submitBtn, .form-editando #submitBtn {
-    background-color: #da849b !important; /* Color rosado fuerte de tu paleta */
+.form-edit #submitBtn,
+.form-editando #submitBtn {
+    background-color: #da849b !important;
+    /* Color rosado fuerte de tu paleta */
     color: white !important;
 }
 
 /* Animación de pulso al entrar a editar */
 @keyframes pulsoEditar {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1.01); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1.01);
+    }
 }
 
 .animar-pulso {
@@ -275,11 +293,25 @@ button.btn-edit:hover, button.btn-delete:hover {
 
 /* Animación de temblor (ERROR) */
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  50% { transform: translateX(6px); }
-  75% { transform: translateX(-6px); }
-  100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Activa el error visual en el form vacío */
@@ -306,7 +338,8 @@ button.btn-edit:hover, button.btn-delete:hover {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    gap: 24px; align-items: flex-start;
+    gap: 24px;
+    align-items: flex-start;
 }
 
 .catalog-layout .catalog-grid {
@@ -574,10 +607,28 @@ button.btn-edit:hover, button.btn-delete:hover {
     text-align: center;
 }
 
+/* contendor de la seccion imagen de la tabla */
+
 .index-page .table-shell th:nth-child(8),
 .index-page .table-shell td:nth-child(8) {
-    width: 96px;
+    width: 160px;
+    min-width: 160px;
+    /* Evita que la tabla lo comprima */
     text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+/* tamano de la imagen */
+
+.index-page .table-shell td:nth-child(8) img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #7a1734;
+    display: block;
+    margin: 0 auto;
 }
 
 .index-page .table-shell th:nth-child(9),
@@ -722,4 +773,86 @@ button.btn-delete:hover {
     background: linear-gradient(135deg, #7a1734 0%, #9c2d4d 100%);
     color: #fff7fa;
 }
+
+/* Contenedor de la cuadrícula de la imagenes del catalogo */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    /* Crea columnas automáticas de mínimo 260px */
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+    align-items: start;
+}
+
+/* La Tarjeta */
+.index-page .item-card,
+.catalog-layout .item-card {
+    background: #fdf8f2;
+    border: 2px solid #da849b;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* La Imagen dentro de la tarjeta */
+.item-card .item-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #da849b;
+}
+
+/*Título del Item */
+.item-card h2 {
+    font-family: var(--font-title);
+    color: #7a1734;
+    font-size: 1.15rem;
+    padding: 15px 15px 5px;
+    margin: 0;
+    display: -webkit-box;
+    /* Limita a 2 líneas y pone puntos suspensivos si es muy largo */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3rem;
+    /* Reserva espacio para 2 líneas */
+}
+
+/* descripción del item en el catálogo */
+.item-card .item-description-card {
+    padding: 0 15px;
+    font-size: 0.9rem;
+    color: #6c1230;
+    line-height: 1.4;
+    margin: 5px 0;
+    display: -webkit-box;
+    /* Limita a 3 líneas y pone puntos suspensivos */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3.8rem;
+}
+
+/* El Precio*/
+.item-card .item-card-price {
+    padding: 0 15px 15px;
+    margin-top: auto;
+    color: #6c1230;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+/* Efecto hover refinado */
+.item-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(122, 23, 52, 0.2);
+    border-color: #7a1734;
+}
+
 
